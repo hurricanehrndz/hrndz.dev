@@ -1,0 +1,35 @@
+---
+baseURL: 'https://hrndz.dev/'
+languageCode: 'en-us'
+title: "HurricaneHrndz"
+
+params:
+  homeInfoParams:
+    Title: Some Stupid Simple Studies (S4) 📚
+    Content: >
+        ## Welcome to another tech ramblings blog site
+
+        - All of the content on this is for my recollection and is a translation of my personal notes.
+
+        - If you somehow stumbled onto the site, for your own sake, I hope you find something useful!
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON # is necessary
+
+menu:
+  main:
+    - identifier: search
+      name: Search
+      url: /search/
+      weight: 10
+    - identifier: tags
+      name: Tags
+      url: /tags/
+      weight: 20
+
+module:
+  imports:
+    - path: 'github.com/adityatelange/hugo-PaperMod'
