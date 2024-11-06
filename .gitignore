@@ -68,6 +68,10 @@ Temporary Items
 # Go workspace file
 go.work
 
-
-export/
 .devenv
+# Site building directories
+zet/
+!content/posts/.gitkeep
+!content/notes/.gitkeep
+content/posts/**
+content/notes/**
