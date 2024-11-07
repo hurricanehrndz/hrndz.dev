@@ -15,35 +15,10 @@
   outputs = inputs @ {flake-parts, ...}:
     flake-parts.lib.mkFlake {inherit inputs;}
     {
+      systems = ["x86_64-linux" "aarch64-darwin"];
       imports = [
         inputs.devenv.flakeModule
+        ./flake
       ];
-      systems = ["x86_64-linux" "aarch64-darwin"];
-
-      perSystem = {
-        config,
-        self',
-        inputs',
-        pkgs,
-        system,
-        ...
-      }: {
-        devenv.shells.default = {
-          name = "DevEnv for publishing notes";
-
-          imports = [];
-
-          # https://devenv.sh/reference/options/
-          packages = [
-            pkgs.hugo
-          ];
-
-          languages.go.enable = true;
-
-          # disable containers
-          containers = pkgs.lib.mkForce {};
-        };
-      };
-      flake = {};
     };
 }
