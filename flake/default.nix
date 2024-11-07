@@ -12,6 +12,23 @@
   }: {
     devenv.shells.default = {
       name = "DevEnv for publishing notes";
+      pre-commit.hooks = {
+        # lint shell scripts
+        shellcheck.enable = true;
+        # lint nix files
+        alejandra.enable = true;
+
+        trim-trailing-whitespace = {
+          enable = true;
+          excludes = [
+            "^\.gitignore$"
+          ];
+        };
+        end-of-file-fixer.enable = true;
+        check-added-large-files.enable = true;
+        check-yaml.enable = true;
+        check-toml.enable = true;
+      };
 
       # https://devenv.sh/reference/options/
       packages = [

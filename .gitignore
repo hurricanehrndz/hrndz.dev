@@ -68,7 +68,6 @@ Temporary Items
 # Go workspace file
 go.work
 
-.devenv
 # Site building directories
 zet/
 !content/posts/.gitkeep
@@ -78,3 +77,5 @@ content/notes/**
 
 # nix/flake
 result
+.devenv
+.pre-commit-config.yaml
