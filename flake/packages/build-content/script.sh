@@ -22,4 +22,6 @@ fi
 rsync --recursive --delete --exclude '.gitkeep' "${posts_src}" "${posts_dst}"
 rsync --recursive --delete --exclude '.gitkeep' "${notes_src}" "${notes_dst}"
 
+git checkout -- content
+
 printf "\e[1;92mContent built from zet successfully\e[0m\n"
