@@ -28,6 +28,14 @@
         check-added-large-files.enable = true;
         check-yaml.enable = true;
         check-toml.enable = true;
+        markdownlint.enable = true;
+        treefmt = {
+          enable = true;
+          settings.formatters = [
+            pkgs.alejandra
+            self'.packages.mdformat
+          ];
+        };
       };
 
       # https://devenv.sh/reference/options/
