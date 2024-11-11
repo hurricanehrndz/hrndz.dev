@@ -8,11 +8,7 @@ posts_dst="${current_dir}/content/posts/"
 notes_dst="${current_dir}/content/notes/"
 
 if [[ ! -d "${zet_dir}" ]]; then
-    if [[ -z "${CI-}" ]]; then
-        git clone --depth 1 git@github.com:hurricanehrndz/zet.git zet
-    else
-        git clone "https://oauth2:${GITHUB_ACCESS_TOKEN}@github.com/hurricanehrndz/zet.git"
-    fi
+    git clone --depth 1 git@github.com:hurricanehrndz/zet.git zet
 else
     pushd "${zet_dir}" || exit 1
     git pull

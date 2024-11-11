@@ -7,10 +7,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
+    - uses: actions/checkout@v4
+      with:
+        fetch-depth: 1
+        repository: hurricanehrndz/zet
+        path: zet
+        token: ${{ secrets.ZET_GH_PAT }}
+
     - uses: cachix/install-nix-action@v27
-    # - run: nix develop --no-pure-eval --command build-content
-    #   env:
-    #     GITHUB_ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        github_access_token: ${{ secrets.GITHUB_TOKEN }}
+    - run: nix develop --no-pure-eval --command build-content
     - run: nix develop --no-pure-eval --command hugo build -b hrndz.me
     # - uses: cloudflare/wrangler-action@v3
     #   with:
