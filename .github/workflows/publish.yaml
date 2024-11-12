@@ -20,8 +20,8 @@ jobs:
         github_access_token: ${{ secrets.GITHUB_TOKEN }}
     - run: nix develop --no-pure-eval --command build-content
     - run: nix develop --no-pure-eval --command hugo build -b hrndz.me
-    # - uses: cloudflare/wrangler-action@v3
-    #   with:
-    #     apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-    #     accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-    #     command: pages deploy YOUR_DIST_FOLDER --project-name=example
+    - uses: cloudflare/wrangler-action@v3
+      with:
+        apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        command: pages deploy public --project-name=hrndz-me
