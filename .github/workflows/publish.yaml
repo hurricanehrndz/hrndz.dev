@@ -18,8 +18,8 @@ jobs:
     - uses: cachix/install-nix-action@v27
       with:
         github_access_token: ${{ secrets.GITHUB_TOKEN }}
-    - run: nix develop --no-pure-eval --command build-content
-    - run: nix develop --no-pure-eval --command hugo build -b hrndz.me
+    - run: nix develop --no-pure-eval --accept-flake-config --command build-content
+    - run: nix develop --no-pure-eval --accept-flake-config --command hugo build -b https://hrndz.me/
     - uses: cloudflare/wrangler-action@v3
       with:
         apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
