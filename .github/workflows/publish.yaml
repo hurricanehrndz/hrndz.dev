@@ -1,8 +1,6 @@
 name: Publish blog/zet/notes
 on:
   workflow_dispatch:
-  schedule:
-    - cron: "0 2 * * *"
 jobs:
   publish:
     runs-on: ubuntu-latest
