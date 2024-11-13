@@ -10,7 +10,7 @@ title = "HurricaneHrndz"
   dateFormat = "2 January 2006"
 
   mainSections = ["posts", "blog"]
-  description = "My awesome website"
+  description = "Dumping ground for ideas and notes"
 
 [params.author]
   name = "Carlos Hernandez"

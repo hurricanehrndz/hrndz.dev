@@ -8,6 +8,7 @@ defaultContentLanguage = "en"
 enableRobotsTXT = true
 paginate = 10
 summaryLength = 0
+googleAnalytics = "G-5X97TC1VQ5"
 
 [outputs]
   home = ["HTML", "RSS", "JSON"]
