@@ -74,6 +74,7 @@ zet/
 !content/notes/.gitkeep
 content/posts/**
 content/notes/**
+content/snotes/**
 
 # nix/flake
 result

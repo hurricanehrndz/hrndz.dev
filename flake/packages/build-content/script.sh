@@ -12,9 +12,9 @@ snotes_dst="${current_dir}/content/snotes/"
 if [[ ! -d "${zet_dir}" ]]; then
     git clone --depth 1 git@github.com:hurricanehrndz/zet.git zet
 else
-    pushd "${zet_dir}" || exit 1
+    pushd "${zet_dir}" > /dev/null || exit 1
     git pull
-    popd || exit 1
+    popd > /dev/null || exit 1
 fi
 
 if [[ ! -d "${posts_src}" ]] || [[ ! -d "${notes_src}" ]]; then
@@ -23,7 +23,9 @@ fi
 
 rsync --recursive --delete --exclude '.gitkeep' "${posts_src}" "${posts_dst}"
 rsync --recursive --delete --exclude '.gitkeep' "${notes_src}" "${notes_dst}"
+
 # not running on github
+: "${CI:=0}"
 if [[ ${CI} != 1 ]]; then
     rsync --recursive --delete --exclude '.gitkeep' "${snotes_src}" "${snotes_dst}"
 fi
