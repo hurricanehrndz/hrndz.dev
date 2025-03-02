@@ -25,8 +25,7 @@ rsync --recursive --delete --exclude '.gitkeep' "${posts_src}" "${posts_dst}"
 rsync --recursive --delete --exclude '.gitkeep' "${notes_src}" "${notes_dst}"
 
 # not running on github
-: "${CI:=0}"
-if [[ ${CI} != 1 ]]; then
+if [[ -z "${CI}" ]]; then
     rsync --recursive --delete --exclude '.gitkeep' "${snotes_src}" "${snotes_dst}"
 fi
 
