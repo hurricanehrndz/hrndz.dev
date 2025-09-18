@@ -79,3 +79,7 @@ content/notes/**
 result
 .devenv
 .pre-commit-config.yaml
+
+# content
+zet
+zet/
