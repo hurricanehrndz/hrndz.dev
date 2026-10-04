@@ -12,7 +12,7 @@
   }: {
     devenv.shells.default = {
       name = "DevEnv for publishing notes";
-      pre-commit.hooks = {
+      git-hooks.hooks = {
         # lint shell scripts
         shellcheck.enable = true;
         # lint nix files
@@ -21,7 +21,7 @@
         trim-trailing-whitespace = {
           enable = true;
           excludes = [
-            "^\.gitignore$"
+            "^\\.gitignore$"
           ];
         };
         end-of-file-fixer.enable = true;
