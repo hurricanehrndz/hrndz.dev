@@ -1,11 +1,15 @@
 {pkgs}:
 pkgs.writeShellApplication {
-  name = "build-content";
+  name = "publish";
 
   runtimeInputs = with pkgs; [
     coreutils
+    findutils
+    gawk
     gitMinimal
-    rsync
+    gnugrep
+    gnused
+    vips
   ];
 
   text = builtins.readFile ./script.sh;

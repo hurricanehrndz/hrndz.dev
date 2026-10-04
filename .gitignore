@@ -20,7 +20,8 @@ hugo.linux
 .LSOverride
 
 # Icon must end with two \r
-Icon
+Icon
+
 
 # Thumbnails
 ._*
@@ -68,18 +69,7 @@ Temporary Items
 # Go workspace file
 go.work
 
-# Site building directories
-zet/
-!content/posts/.gitkeep
-!content/notes/.gitkeep
-content/posts/**
-content/notes/**
-
 # nix/flake
 result
 .devenv
 .pre-commit-config.yaml
-
-# content
-zet
-zet/

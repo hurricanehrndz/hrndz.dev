@@ -8,7 +8,7 @@
     ...
   }: {
     packages = {
-      build-content = import ./build-content {
+      publish = import ./publish {
         inherit pkgs;
       };
       mdformat = pkgs.callPackage ./mdformat.nix {};
