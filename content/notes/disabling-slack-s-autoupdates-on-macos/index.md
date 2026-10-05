@@ -1,12 +1,12 @@
 ---
 # vim: set ft=markdown tw=72:
-title: Disabling slack's autoupdates on macOS
 date: 2024-11-06T07:53:05-0700
 lastmod: 2024-11-06T07:53:05-0700
 draft: false
 publish: true
 aliases: [/notes/fx9qzfpn/]
 tags: [macOS]
+title: "Disabling slack's autoupdates on macOS"
 ---
 
 You will need to create a custom profile on Jamf, this is best done by

@@ -1,12 +1,12 @@
 ---
 # vim: set ft=markdown tw=72:
-title: Installable conditions for Munki
 date: 2024-11-15T13:12:45-0700
 lastmod: 2024-11-15T13:12:45-0700
 draft: false
 publish: true
 aliases: [/notes/mw5pwh7j/]
 tags: [macOS, munki]
+title: "Installable conditions for Munki"
 ---
 
 Installable conditions in a Munki PLIST use a syntax know as

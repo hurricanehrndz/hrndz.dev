@@ -1,12 +1,12 @@
 ---
 # vim: set ft=markdown tw=72:
-title: Add additional addresses to loopback on macOS
 date: 2023-11-05T16:13:33-0700
 lastmod: 2023-11-05T16:13:33-0700
 draft: false
 publish: true
 aliases: [/notes/rcxhexvs/]
 tags: [macOS]
+title: "Add additional addresses to loopback on macOS"
 ---
 
 Adding secondary address to lo0

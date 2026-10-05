@@ -1,12 +1,12 @@
 ---
 # vim: set ft=markdown tw=72:
-title: CGO passing a function pointer to C
 date: 2024-11-04T15:23:59-0700
 lastmod: 2025-04-14T15:59:37-0600
 draft: false
 publish: true
 aliases: [/notes/3zy23um5/]
 tags: [golang, code-snippet]
+title: "CGO passing a function pointer to C"
 ---
 
 By default when passing a function as an argument, Cgo uses

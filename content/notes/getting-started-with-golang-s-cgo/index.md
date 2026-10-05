@@ -1,12 +1,12 @@
 ---
 # vim: set ft=markdown tw=72:
-title: Getting started with golang's cgo
 date: 2024-11-04T16:40:30-0700
 lastmod: 2024-11-04T20:55:44-0700
 draft: false
 publish: true
 aliases: [/notes/72mxgkzm/]
 tags: [golang]
+title: "Getting started with golang's cgo"
 ---
 
 ```go

@@ -1,12 +1,12 @@
 ---
 # vim: set ft=markdown tw=72:
-title: KeepAlive GRPC on idle when using AWS ALB
 date: 2024-11-05T07:50:51-0700
 lastmod: 2024-11-05T07:50:51-0700
 draft: false
 publish: true
 aliases: [/notes/g45fr844/]
 tags: [golang]
+title: "KeepAlive GRPC on idle when using AWS ALB"
 ---
 
 [The AWS ALB does not support forwarding HTTP2 ping frames][so-grpc-http2-ping].

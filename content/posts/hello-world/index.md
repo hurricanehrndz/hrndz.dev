@@ -1,6 +1,5 @@
 ---
 # vim: set ft=markdown tw=72:
-title: Hello World!
 date: 2020-12-22T11:28:05-0700
 lastmod: 2020-12-22T11:28:05-0700
 draft: false
@@ -9,6 +8,7 @@ aliases: [/posts/077di2f7/]
 tags: [philosophy, tech]
 description: Let the blogging and fun begin!
 thumb: hello-coffee*
+title: "Hello World!"
 ---
 
 First and foremost **_welcome to my blog_**. I am starting this

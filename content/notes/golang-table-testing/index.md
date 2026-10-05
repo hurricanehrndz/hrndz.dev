@@ -1,12 +1,12 @@
 ---
 # vim: set ft=markdown tw=72:
-title: Golang Table Testing
 date: 2024-12-12T16:39:35-0700
 lastmod: 2024-12-12T16:39:35-0700
 draft: false
 publish: true
 aliases: [/notes/clzp0z42/]
 tags: [golang]
+title: "Golang Table Testing"
 ---
 
 Table testing in Go is similar to what regression testing is in other

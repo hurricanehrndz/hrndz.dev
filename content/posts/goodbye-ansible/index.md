@@ -1,6 +1,5 @@
 ---
 # vim: set ft=markdown tw=72:
-title: Goodbye Ansible
 date: 2020-12-24T08:00:00-0700
 lastmod: 2020-12-24T08:00:00-0700
 draft: false
@@ -8,6 +7,7 @@ publish: true
 aliases: [/posts/88ivmekw/]
 description: Hello nix and NixOS, Goodbye Anislbe!
 tags: [nix, nixos, ansible]
+title: "Goodbye Ansible"
 ---
 
 Today I formally part ways with Ansible. Well, not really. Ansible is so

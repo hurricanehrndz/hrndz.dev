@@ -1,12 +1,12 @@
 ---
 # vim: set ft=markdown tw=72:
-title: Sharing localhost service with a remote network
 date: 2024-11-20T08:11:02-0700
 lastmod: 2024-11-20T08:11:02-0700
 draft: false
 publish: true
 aliases: [/posts/kus8sygc/]
 tags: [macOS, lima]
+title: "Sharing localhost service with a remote network"
 ---
 
 This past week I got asked a question that keeps arising from time to

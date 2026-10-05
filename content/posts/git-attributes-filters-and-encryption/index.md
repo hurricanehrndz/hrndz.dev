@@ -1,12 +1,12 @@
 ---
 # vim: set ft=markdown tw=72:
-title: Git Attributes, Filters, and Encryption
 date: 2025-02-26T21:03:34-0700
 lastmod: 2025-03-02T20:14:48-0700
 draft: false
 publish: true
 aliases: [/posts/r4621ixh/]
 tags: [encryption, git]
+title: "Git Attributes, Filters, and Encryption"
 ---
 
 The [Git documentation][gitbook-doc] states the following about

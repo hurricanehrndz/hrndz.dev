@@ -1,12 +1,12 @@
 ---
 # vim: set ft=markdown tw=72:
-title: Using a different listening address with lima
 date: 2023-11-05T16:05:31-0700
 lastmod: 2025-03-13T17:02:09-0600
 draft: false
 publish: true
 aliases: [/notes/gc4ct1zb/]
 tags: [docker, macOS]
+title: "Using a different listening address with lima"
 ---
 
 Append the following to the lima.yaml file of the guest under

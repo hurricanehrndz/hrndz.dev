@@ -1,12 +1,12 @@
 ---
 # vim: set ft=markdown tw=72:
-title: macOS virtualization and DNS
 date: 2024-12-12T09:27:44-0700
 lastmod: 2024-12-12T09:27:44-0700
 draft: false
 publish: true
 aliases: [/posts/aopxsi5g/]
 tags: [macOS, DNS, VMs]
+title: "macOS virtualization and DNS"
 ---
 
 Have you recently set up a macOS VM and encountered DNS resolution

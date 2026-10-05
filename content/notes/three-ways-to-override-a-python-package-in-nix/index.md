@@ -1,12 +1,12 @@
 ---
 # vim: set ft=markdown tw=72:
-title: Three ways to override a Python package in Nix
 date: 2025-03-02T20:20:59-0700
 lastmod: 2025-03-04T18:26:24-0700
 draft: false
 publish: true
 aliases: [/notes/qep3x1bi/]
 tags: [nix]
+title: "Three ways to override a Python package in Nix"
 ---
 
 Recently, I found myself needing to run a more recent version of a

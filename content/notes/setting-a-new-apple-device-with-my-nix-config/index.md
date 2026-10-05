@@ -1,12 +1,12 @@
 ---
 # vim: set ft=markdown tw=72:
-title: Setting a new Apple Device with my Nix config
 date: 2025-03-03T13:49:16-0700
 lastmod: 2025-03-03T13:49:16-0700
 draft: false
 publish: true
 aliases: [/notes/yr8m9tt6/]
 tags: []
+title: "Setting a new Apple Device with my Nix config"
 ---
 
 ## Install Nix via Determinate System Installer
