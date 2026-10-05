@@ -77,5 +77,12 @@ while IFS=: read -r file target; do
 done < <(grep -roE '\]\(/(notes|posts)/[^/)#]+/' "${repo_root}/content/notes" "${repo_root}/content/posts" |
     sed -E 's#^(.*):\]\(/(.*)/$#\1:\2#')
 
+# Links into other vault folders (wiki/, projects/, ...) aren't rewritten above
+# and would 404 as well. URLs are skipped: they contain a colon.
+while IFS=: read -r file link; do
+    printf "\e[0;33mUnconverted vault link %s in %s\e[0m\n" "${link}" "${file#"${repo_root}"/}" >&2
+    broken=1
+done < <(grep -roE '\]\([^):]+\.md(#[^)]*)?\)' "${repo_root}/content/notes" "${repo_root}/content/posts")
+
 printf "\e[1;92mPublished %d pages from %s\e[0m\n" "${count}" "${vault}"
 [[ ${broken} == 0 ]] || exit 1
