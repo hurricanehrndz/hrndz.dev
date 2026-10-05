@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-# Pages are named after their title and published under its slug. Links to
+# Pages are named after their title, which needs no title: of its own, and
+# are published under its slug. Links to
 # them, wiki or markdown, must reach the site as working links, and bash's
 # [[ ]] in code must not. Runs script.sh against a throwaway vault and
 # repo: bash flake/packages/publish/test.sh
@@ -12,7 +13,7 @@ script="$(cd "$(dirname "$0")" && pwd)/script.sh"
 mkdir -p "${tmp}"/vault/{notes,posts,attachments,wiki} "${tmp}"/repo/content/{notes,posts}
 git -C "${tmp}/repo" init -q
 printf 'GIF89a' >"${tmp}/vault/attachments/a pic.gif"
-printf -- '---\npublish: true\n---\n# Other\n' >"${tmp}/vault/notes/Other Page.md"
+printf -- '---\npublish: true\ntitle: "Other: the page"\n---\n# Other\n' >"${tmp}/vault/notes/Other Page.md"
 cat >"${tmp}/vault/posts/A Page!.md" <<'EOF'
 ---
 publish: true
@@ -36,6 +37,7 @@ diff -u - "${tmp}/repo/content/posts/a-page/index.md" <<'EOF'
 ---
 publish: true
 related: "[[Other Page]]"
+title: "A Page!"
 ---
 See [Other Page](/notes/other-page/), [that bit](/notes/other-page/#Some%20Heading), [Local](#Local) and `[[code]]`.
 Markdown: [other](/notes/other-page/), [short](/notes/other-page/) and [self](/posts/a-page/#top).
@@ -48,7 +50,8 @@ if [[ -z "$x" ]]; then
 ```
 EOF
 [[ -f "${tmp}/repo/content/posts/a-page/a pic.gif" ]]
-[[ -d "${tmp}/repo/content/notes/other-page" ]]
+grep -qx 'title: "Other: the page"' "${tmp}/repo/content/notes/other-page/index.md"
+[[ $(grep -c '^title:' "${tmp}/repo/content/notes/other-page/index.md") == 1 ]]
 
 # Links publishing can't honour fail the run instead of shipping dead links.
 printf -- '---\npublish: true\n---\n[[missing]] [[wiki-page]] ![[Other Page]]\n' >"${tmp}/vault/notes/bad.md"

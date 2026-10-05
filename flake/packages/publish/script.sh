@@ -38,13 +38,14 @@ vault_files="$(cd "${vault}" && find . -type f -not -path './.*' | sed 's#^\./##
 #                                           Obsidian's shortest-path links)
 # Attachment links stay vault-relative for the image step below.
 # Frontmatter, fenced code and inline code are left alone (bash uses [[ ]]).
+# A page without a title: gets its file name, which is its title in the vault.
 # Fails on links it can't convert: unknown pages and embedded notes.
 site_links() {
     # CEILING: names resolve like Obsidian's (path, then file name), but a
     # name that exists in two folders resolves to whichever find lists
     # first. Filenames are unique in practice; prefer notes/ and posts/ in
     # the lookup if that changes.
-    LC_ALL=C gawk -v src="${1#"${vault}"/}" -v section="$2" "${slug_awk}"'
+    LC_ALL=C gawk -v src="${1#"${vault}"/}" -v section="$2" -v title="$(basename "$1" .md)" "${slug_awk}"'
         function enc(s) { gsub(/ /, "%20", s); return s }
         function dec(s,    out) {
             out = ""
@@ -131,7 +132,12 @@ site_links() {
             next
         }
         FNR == 1 && /^---$/ { front = 1; print; next }
-        front { if (/^---$/) front = 0; print; next }
+        front {
+            if (/^title:/) titled = 1
+            # Obsidian file names cannot contain " or \, so quoting is safe.
+            if (/^---$/) { front = 0; if (!titled) print "title: \"" title "\"" }
+            print; next
+        }
         /^[ \t]*(```|~~~)/ { fence = !fence; print; next }
         fence { print; next }
         {
